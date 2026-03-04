@@ -33,6 +33,7 @@ Thumbs.db
 
 # ChromaDB persistent storage
 chroma_data/
+data/
 
 # Uploaded documents
 uploads/

@@ -1,6 +1,3 @@
-# cortex-rag
-Document Q&amp;A system with retrieval-augmented generation — FastAPI, ChromaDB, Anthropic Claude, React.
-
 # Cortex — Document Q&A with Retrieval-Augmented Generation
 
 A full-stack RAG system that lets you upload documents (PDF, TXT, Markdown), chunks and embeds them, and answers natural-language questions grounded in the source material — with citations.
@@ -92,6 +89,13 @@ npm run dev
 
 Open [http://localhost:5173](http://localhost:5173) — the frontend proxies API requests to `localhost:8000`.
 
+### Tests
+
+```bash
+pip install -e ".[dev]"
+python -m pytest tests/ -v
+```
+
 ---
 
 ## API
@@ -151,7 +155,7 @@ cortex-rag/
 
 ## Design
 
-The frontend ("Cortex") uses a dark editorial aesthetic — Instrument Serif headings, DM Sans body text, JetBrains Mono for metadata, and a warm amber accent (`#C4956A`). See `SPEC.md` and `CortexUI.jsx` for the full design reference.
+The frontend ("Cortex") uses a dark editorial aesthetic — Instrument Serif headings, DM Sans body text, JetBrains Mono for metadata, and a warm amber accent (`#C4956A`). See `cortex-project-spec.md` and `cortex-project-ui.jsx` for the full design reference.
 
 ---
 
