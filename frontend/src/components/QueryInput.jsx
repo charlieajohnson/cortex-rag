@@ -1,12 +1,21 @@
 import { useRef } from "react";
 import { IconSend } from "./Icons.jsx";
 
+const MODES = [
+  { key: "answer", label: "Answer" },
+  { key: "brief", label: "Research Brief" },
+  { key: "memo", label: "Bullet Memo" },
+  { key: "claims", label: "Claims + Evidence" },
+];
+
 export default function QueryInput({
   query,
   setQuery,
   onSend,
   disabled,
   documentCount,
+  mode,
+  setMode,
 }) {
   const textareaRef = useRef(null);
 
@@ -25,6 +34,17 @@ export default function QueryInput({
 
   return (
     <div className="input-area">
+      <div className="mode-selector">
+        {MODES.map((m) => (
+          <button
+            key={m.key}
+            className={`mode-pill ${mode === m.key ? "active" : ""}`}
+            onClick={() => setMode(m.key)}
+          >
+            {m.label}
+          </button>
+        ))}
+      </div>
       <div className="input-wrapper">
         <textarea
           ref={textareaRef}

@@ -25,6 +25,7 @@ class QueryIn(BaseModel):
     question: str
     document_ids: list[str] | None = None
     top_k: int = 5
+    mode: str = "answer"  # "answer" | "brief" | "memo" | "claims"
 
 
 class SourceOut(BaseModel):
@@ -41,3 +42,4 @@ class QueryOut(BaseModel):
     sources: list[SourceOut]
     model: str
     latency_ms: int
+    mode: str = "answer"

@@ -24,7 +24,7 @@ def query_documents(body: QueryIn, db: Session = Depends(get_db)):
         document_ids=body.document_ids,
     )
 
-    answer = generate_answer(body.question, chunks)
+    answer = generate_answer(body.question, chunks, mode=body.mode)
 
     latency_ms = int((time.perf_counter() - start) * 1000)
 
@@ -56,4 +56,5 @@ def query_documents(body: QueryIn, db: Session = Depends(get_db)):
         sources=sources,
         model=settings.anthropic_model,
         latency_ms=latency_ms,
+        mode=body.mode,
     )

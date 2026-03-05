@@ -474,6 +474,50 @@ body {
 .thinking-dot:nth-child(2) { animation-delay: 0.2s; }
 .thinking-dot:nth-child(3) { animation-delay: 0.4s; }
 
+/* Mode selector */
+.mode-selector {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.mode-pill {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.02em;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.mode-pill:hover {
+  border-color: var(--accent-dim);
+  color: var(--text-secondary);
+}
+
+.mode-pill.active {
+  border-color: var(--accent);
+  background: var(--accent-glow);
+  color: var(--accent);
+}
+
+.mode-badge {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--accent-glow);
+  color: var(--accent);
+  border: 1px solid var(--accent-dim);
+}
+
 /* Input area */
 .input-area {
   padding: 16px 32px 24px;
@@ -615,5 +659,14 @@ body {
   .source-header {
     font-size: 11px;
     flex-wrap: wrap;
+  }
+
+  .mode-selector {
+    gap: 4px;
+  }
+
+  .mode-pill {
+    font-size: 9px;
+    padding: 3px 8px;
   }
 }

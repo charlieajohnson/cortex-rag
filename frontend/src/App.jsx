@@ -14,6 +14,7 @@ export default function App() {
   const [messages, setMessages] = useState([]);
   const [query, setQuery] = useState("");
   const [isThinking, setIsThinking] = useState(false);
+  const [mode, setMode] = useState("answer");
 
   const refreshDocuments = useCallback(async () => {
     try {
@@ -65,7 +66,7 @@ export default function App() {
     setIsThinking(true);
 
     try {
-      const result = await queryDocuments(q);
+      const result = await queryDocuments(q, null, 5, mode);
       setMessages((prev) => [...prev, { type: "answer", ...result }]);
     } catch (err) {
       setMessages((prev) => [
@@ -115,6 +116,8 @@ export default function App() {
           onSend={() => handleSend()}
           disabled={isThinking}
           documentCount={readyCount}
+          mode={mode}
+          setMode={setMode}
         />
       </div>
     </div>

@@ -18,6 +18,9 @@ export default function AnswerCard({ message }) {
           <span>{message.latency_ms}ms</span>
           <span>&middot;</span>
           <span>{message.sources.length} sources</span>
+          {message.mode && message.mode !== "answer" && (
+            <span className="mode-badge">{message.mode}</span>
+          )}
         </div>
         {message.sources.length > 0 && (
           <div className="sources-section">

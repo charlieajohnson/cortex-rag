@@ -17,11 +17,11 @@ export async function deleteDocument(id) {
   await fetch(`${API}/documents/${id}`, { method: "DELETE" });
 }
 
-export async function queryDocuments(question, documentIds = null, topK = 5) {
+export async function queryDocuments(question, documentIds = null, topK = 5, mode = "answer") {
   const res = await fetch(`${API}/query`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ question, document_ids: documentIds, top_k: topK }),
+    body: JSON.stringify({ question, document_ids: documentIds, top_k: topK, mode }),
   });
   if (!res.ok) throw new Error(await res.text());
   return res.json();
