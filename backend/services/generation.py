@@ -6,7 +6,10 @@ SYSTEM_PROMPT = """You are a helpful document assistant. Answer the user's \
 question based ONLY on the provided context. If the context doesn't contain \
 enough information to answer, say so — do not make things up.
 
-When answering, cite which source(s) you drew from using [Source N] notation."""
+When answering, cite which source(s) you drew from using [Source N] notation.
+
+Respond in plain text only. Do not use markdown formatting such as headers, \
+bold, bullet points, or code blocks."""
 
 _client = anthropic.Anthropic(api_key=settings.anthropic_api_key)
 
