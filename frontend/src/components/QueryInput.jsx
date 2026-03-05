@@ -29,7 +29,7 @@ export default function QueryInput({
         <textarea
           ref={textareaRef}
           className="input-field"
-          placeholder="Ask a question about your documents\u2026"
+          placeholder="Ask a question about your documents..."
           value={query}
           onChange={handleInput}
           onKeyDown={handleKeyDown}
