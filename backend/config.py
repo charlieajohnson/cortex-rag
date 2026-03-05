@@ -6,7 +6,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 class Settings(BaseSettings):
     anthropic_api_key: str = ""
-    anthropic_model: str = "claude-sonnet-4-5-20250514"
+    anthropic_model: str = "claude-sonnet-4-5-20250929"
 
     database_url: str = f"sqlite:///{BASE_DIR / 'data' / 'cortex.db'}"
     chromadb_dir: str = str(BASE_DIR / "data" / "chromadb")
