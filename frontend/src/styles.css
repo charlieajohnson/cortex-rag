@@ -532,3 +532,88 @@ body {
   margin-top: 8px;
   text-align: center;
 }
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .app {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+    max-height: 45vh;
+    overflow-y: auto;
+  }
+
+  .sidebar-header {
+    padding: 16px 16px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .sidebar-section-label {
+    padding: 12px 16px 6px;
+  }
+
+  .doc-list {
+    padding: 0 8px;
+    max-height: 120px;
+    overflow-y: auto;
+  }
+
+  .upload-zone {
+    margin: 8px;
+    padding: 14px;
+  }
+
+  .main-header {
+    padding: 14px 16px;
+  }
+
+  .chat-area {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .question-bubble {
+    max-width: 85%;
+  }
+
+  .answer-text {
+    max-width: 100%;
+  }
+
+  .input-area {
+    padding: 12px 16px 16px;
+  }
+
+  .empty-title {
+    font-size: 18px;
+  }
+
+  .empty-subtitle {
+    font-size: 12px;
+    max-width: 260px;
+  }
+
+  .suggestions {
+    gap: 6px;
+  }
+
+  .suggestion-chip {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  .source-card {
+    padding: 8px 10px;
+  }
+
+  .source-header {
+    font-size: 11px;
+    flex-wrap: wrap;
+  }
+}
